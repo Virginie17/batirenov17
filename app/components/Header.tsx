@@ -1,18 +1,19 @@
 import { Building2, Menu } from "lucide-react";
 
 const nav = [
-  ["Prestations", "#prestations"],
-  ["Réalisations", "#realisations"],
-  ["Méthode", "#methode"],
-  ["Secteur", "#zone"],
-  ["Contact", "#contact"],
+  ["Accueil", "/"],
+  ["Réalisations", "/realisations"],
+  ["Portes & fenêtres", "/portes-fenetres"],
+  ["Volets", "/volets-battants"],
+  ["Salle de bain", "/salle-de-bain"],
+  ["Contact", "/contact"],
 ];
 
 export function Header() {
   return (
     <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#15110d]/90 text-white shadow-2xl backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <a href="#accueil" className="flex items-center gap-3">
+        <a href="/" className="flex items-center gap-3">
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#f97316] to-[#c2410c] shadow-lg shadow-orange-500/30">
             <Building2 className="h-6 w-6" />
           </div>
@@ -22,7 +23,7 @@ export function Header() {
           </div>
         </a>
 
-        <nav className="hidden items-center gap-8 text-sm font-bold text-zinc-200 lg:flex">
+        <nav className="hidden items-center gap-5 text-sm font-bold text-zinc-200 xl:flex">
           {nav.map(([label, href]) => (
             <a key={href} href={href} className="transition hover:text-[#fb923c]">{label}</a>
           ))}
@@ -32,7 +33,7 @@ export function Header() {
           06 68 00 86 94
         </a>
 
-        <Menu className="h-7 w-7 lg:hidden" />
+        <Menu className="h-7 w-7 xl:hidden" />
       </div>
     </header>
   );
