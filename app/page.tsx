@@ -5,8 +5,9 @@ import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { InteriorServices } from "./components/InteriorServices";
 import { Portfolio } from "./components/Portfolio";
-import { ProcessZone } from "./components/ProcessZone";
 import { Trust } from "./components/Trust";
+import { ValueCards } from "./components/ValueCards";
+import { ZoneIntervention } from "./components/ZoneIntervention";
 import { zones } from "./components/site-data";
 
 const jsonLd = {
@@ -34,11 +35,12 @@ export default function Home() {
       <Header />
       <Hero />
       <AboutSection />
+      <ValueCards />
       <Trust />
       <InteriorServices />
       <ExteriorServices />
       <Portfolio />
-      <ProcessZone />
+      <ZoneIntervention />
       <ContactFooter />
     </main>
   );
