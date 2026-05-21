@@ -4,6 +4,7 @@ import { Hero } from "./components/Hero";
 import { InteriorServices } from "./components/InteriorServices";
 import { LocalBusinessSchema } from "./components/LocalBusinessSchema";
 import { Portfolio } from "./components/Portfolio";
+import { SocialProof } from "./components/SocialProof";
 import { Trust } from "./components/Trust";
 import { ValueCards } from "./components/ValueCards";
 import { ZoneIntervention } from "./components/ZoneIntervention";
@@ -19,6 +20,7 @@ export default function Home() {
       <InteriorServices />
       <ExteriorServices />
       <Portfolio />
+      <SocialProof />
       <ZoneIntervention />
     </>
   );
