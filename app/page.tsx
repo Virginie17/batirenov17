@@ -1,34 +1,4 @@
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "HomeAndConstructionBusiness",
-      name: "BâtiReno’V17",
-      url: "https://batirenov17.fr",
-      telephone: "+33668008694",
-      email: "c.vicq@outlook.fr",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "1 Chemin de la Loubrie",
-        postalCode: "17540",
-        addressLocality: "Bouhet",
-        addressCountry: "FR",
-      },
-      areaServed: [
-        "Bouhet",
-        "Surgères",
-        "La Rochelle",
-        "Rochefort",
-        "Charente-Maritime",
-        "Vendée",
-        "Deux-Sèvres",
-      ],
-      description:
-        "Travaux de menuiserie, rénovation et aménagement intérieur/extérieur en Charente-Maritime.",
-    }),
-  }}
-/>
+
 import { Phone, ShieldCheck, Hammer, MapPin, Star, Mail } from "lucide-react";
 
 const services = [
@@ -206,3 +176,34 @@ export default function Home() {
     </main>
   );
 }
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      name: "BâtiReno’V17",
+      url: "https://batirenov17.fr",
+      telephone: "+33668008694",
+      email: "c.vicq@outlook.fr",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "1 Chemin de la Loubrie",
+        postalCode: "17540",
+        addressLocality: "Bouhet",
+        addressCountry: "FR",
+      },
+      areaServed: [
+        "Bouhet",
+        "Surgères",
+        "La Rochelle",
+        "Rochefort",
+        "Charente-Maritime",
+        "Vendée",
+        "Deux-Sèvres",
+      ],
+      description:
+        "Travaux de menuiserie, rénovation et aménagement intérieur/extérieur en Charente-Maritime.",
+    }),
+  }}
+/>
