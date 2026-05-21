@@ -6,7 +6,7 @@ import {
   ChevronRight,
   Fence,
   Hammer,
-  Home,
+  Home as HomeIcon,
   Mail,
   MapPin,
   Menu,
@@ -17,7 +17,7 @@ import {
 
 const services = [
   {
-    icon: Home,
+    icon: HomeIcon,
     title: "Portes & fenêtres",
     text: "Menuiseries intérieures et extérieures, remplacement, rénovation et amélioration de l’isolation.",
   },
