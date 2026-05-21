@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ContactFooter } from "./components/ContactFooter";
 import { Header } from "./components/Header";
+import { StickyMobileCTA } from "./components/StickyMobileCTA";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,10 +16,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr">
       <body>
-        <div className="flex min-h-screen flex-col">
+        <div className="flex min-h-screen flex-col pb-20 md:pb-0">
           <Header />
           <main className="flex-1">{children}</main>
           <ContactFooter />
+          <StickyMobileCTA />
         </div>
       </body>
     </html>
