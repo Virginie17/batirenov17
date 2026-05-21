@@ -12,6 +12,7 @@ import {
   Menu,
   Phone,
   ShieldCheck,
+  Star,
   Trees,
 } from "lucide-react";
 
@@ -53,6 +54,13 @@ const trustItems = [
   "Entreprise certifiée RGE",
   "Garantie décennale",
   "Accompagnement avant, pendant et après travaux",
+];
+
+const steps = [
+  "Échange sur votre projet",
+  "Conseils et devis clair",
+  "Planification des travaux",
+  "Suivi et finitions soignées",
 ];
 
 const zones = [
@@ -114,6 +122,9 @@ export default function Home() {
             </a>
             <a href="#realisations" className="transition hover:text-[#fb923c]">
               Réalisations
+            </a>
+            <a href="#methode" className="transition hover:text-[#fb923c]">
+              Méthode
             </a>
             <a href="#zone" className="transition hover:text-[#fb923c]">
               Zone
@@ -256,6 +267,37 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-white py-20 lg:py-28">
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div className="rounded-[2rem] bg-[#101010] p-8 text-white shadow-2xl lg:p-12">
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-[#fb923c]">
+              Pourquoi nous choisir
+            </p>
+            <h2 className="mt-3 text-3xl font-black sm:text-5xl">
+              Un artisan local pour des travaux suivis et maîtrisés
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-zinc-300">
+              BâtiReno’V17 met l’accent sur la confiance, la qualité des
+              finitions et l’accompagnement de proximité. L’objectif : un projet
+              clair, un suivi sérieux et un résultat durable.
+            </p>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2">
+            {trustItems.map((item) => (
+              <article key={item} className="rounded-[2rem] bg-[#f7f4ef] p-7">
+                <CheckCircle2 className="mb-4 h-8 w-8 text-[#f97316]" />
+                <h3 className="text-xl font-black">{item}</h3>
+                <p className="mt-3 leading-7 text-zinc-600">
+                  Une garantie de sérieux pour aborder votre projet avec plus de
+                  confiance.
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="realisations" className="bg-[#101010] py-20 text-white lg:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
@@ -269,19 +311,62 @@ export default function Home() {
               Les photos de chantiers sont essentielles pour montrer la qualité
               des finitions, la transformation et le sérieux de l’entreprise.
             </p>
+            <a
+              href="#contact"
+              className="mt-8 inline-flex items-center rounded-full bg-[#f97316] px-7 py-4 font-black text-white transition hover:bg-[#ea580c]"
+            >
+              Demander un devis
+              <ChevronRight className="ml-2 h-5 w-5" />
+            </a>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <img
-              src="/images/avant.jpg"
-              alt="Avant rénovation BâtiReno’V17"
-              className="h-72 w-full rounded-[2rem] object-cover"
-            />
-            <img
-              src="/images/apres.jpg"
-              alt="Après rénovation BâtiReno’V17"
-              className="h-72 w-full rounded-[2rem] object-cover"
-            />
+            <div>
+              <p className="mb-3 text-sm font-black uppercase tracking-[0.2em] text-[#fb923c]">
+                Avant
+              </p>
+              <img
+                src="/images/avant.jpg"
+                alt="Avant rénovation BâtiReno’V17"
+                className="h-72 w-full rounded-[2rem] object-cover"
+              />
+            </div>
+            <div>
+              <p className="mb-3 text-sm font-black uppercase tracking-[0.2em] text-[#fb923c]">
+                Après
+              </p>
+              <img
+                src="/images/apres.jpg"
+                alt="Après rénovation BâtiReno’V17"
+                className="h-72 w-full rounded-[2rem] object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="methode" className="py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f97316]">
+            Méthode
+          </p>
+          <h2 className="mt-3 max-w-3xl text-3xl font-black sm:text-5xl">
+            Un accompagnement simple, clair et rassurant
+          </h2>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-4">
+            {steps.map((step, index) => (
+              <article key={step} className="rounded-[2rem] bg-white p-7 shadow-sm">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#f97316] text-lg font-black text-white">
+                  {index + 1}
+                </div>
+                <h3 className="text-lg font-black">{step}</h3>
+                <p className="mt-3 text-sm leading-7 text-zinc-600">
+                  Une étape pensée pour avancer sereinement, sans surprise et
+                  avec une vision claire du projet.
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -307,6 +392,26 @@ export default function Home() {
               </span>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f97316] px-4 py-16 text-white sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-white/80">
+              Devis gratuit
+            </p>
+            <h2 className="mt-3 max-w-3xl text-3xl font-black sm:text-5xl">
+              Parlons de votre projet de menuiserie ou rénovation
+            </h2>
+          </div>
+          <a
+            href="tel:+33668008694"
+            className="inline-flex items-center rounded-full bg-[#101010] px-8 py-4 font-black text-white transition hover:bg-white hover:text-[#101010]"
+          >
+            <Phone className="mr-2 h-5 w-5" />
+            Appeler BâtiReno’V17
+          </a>
         </div>
       </section>
 
@@ -348,6 +453,23 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <footer className="border-t border-zinc-200 bg-white px-4 py-10 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 text-sm text-zinc-600 md:flex-row md:items-center">
+          <div>
+            <p className="font-black text-[#151515]">BâtiReno’V17</p>
+            <p>Menuiserie, rénovation et aménagement en Charente-Maritime.</p>
+          </div>
+          <div className="flex flex-col gap-2 md:text-right">
+            <a href="tel:+33668008694" className="font-bold hover:text-[#f97316]">
+              06 68 00 86 94
+            </a>
+            <a href="mailto:c.vicq@outlook.fr" className="font-bold hover:text-[#f97316]">
+              c.vicq@outlook.fr
+            </a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
