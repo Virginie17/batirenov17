@@ -1,4 +1,3 @@
-
 import { Phone, ShieldCheck, Hammer, MapPin, Star, Mail } from "lucide-react";
 
 const services = [
@@ -11,9 +10,41 @@ const services = [
   "Charpente, toiture & façade",
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  name: "BâtiReno’V17",
+  url: "https://batirenov17.fr",
+  telephone: "+33668008694",
+  email: "c.vicq@outlook.fr",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1 Chemin de la Loubrie",
+    postalCode: "17540",
+    addressLocality: "Bouhet",
+    addressCountry: "FR",
+  },
+  areaServed: [
+    "Bouhet",
+    "Surgères",
+    "La Rochelle",
+    "Rochefort",
+    "Charente-Maritime",
+    "Vendée",
+    "Deux-Sèvres",
+  ],
+  description:
+    "Travaux de menuiserie, rénovation et aménagement intérieur/extérieur en Charente-Maritime.",
+};
+
 export default function Home() {
   return (
     <main className="bg-stone-50 text-neutral-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <section className="bg-neutral-950 text-white">
         <div className="mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-2">
           <div>
@@ -64,7 +95,7 @@ export default function Home() {
             <img
               src="/images/chantier-batirenov17.jpg"
               alt="Travaux de menuiserie et rénovation en Charente-Maritime"
-              className="h-[520px] w-full rounded-[1.5rem] object-cover"
+              className="h-[360px] w-full rounded-[1.5rem] object-cover sm:h-[520px]"
             />
           </div>
         </div>
@@ -118,12 +149,12 @@ export default function Home() {
               <img
                 src="/images/avant.jpg"
                 alt="Avant travaux BâtiReno’V17"
-                className="h-72 rounded-3xl object-cover"
+                className="h-72 w-full rounded-3xl object-cover"
               />
               <img
                 src="/images/apres.jpg"
                 alt="Après travaux BâtiReno’V17"
-                className="h-72 rounded-3xl object-cover"
+                className="h-72 w-full rounded-3xl object-cover"
               />
             </div>
           </div>
@@ -144,7 +175,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="py-20">
+      <section id="contact" className="py-20 px-6">
         <div className="mx-auto max-w-4xl rounded-[2rem] bg-white p-8 shadow-xl md:p-12">
           <Star className="h-8 w-8 text-orange-500" />
           <h2 className="mt-4 text-3xl font-black md:text-5xl">
@@ -176,34 +207,3 @@ export default function Home() {
     </main>
   );
 }
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "HomeAndConstructionBusiness",
-      name: "BâtiReno’V17",
-      url: "https://batirenov17.fr",
-      telephone: "+33668008694",
-      email: "c.vicq@outlook.fr",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "1 Chemin de la Loubrie",
-        postalCode: "17540",
-        addressLocality: "Bouhet",
-        addressCountry: "FR",
-      },
-      areaServed: [
-        "Bouhet",
-        "Surgères",
-        "La Rochelle",
-        "Rochefort",
-        "Charente-Maritime",
-        "Vendée",
-        "Deux-Sèvres",
-      ],
-      description:
-        "Travaux de menuiserie, rénovation et aménagement intérieur/extérieur en Charente-Maritime.",
-    }),
-  }}
-/>
