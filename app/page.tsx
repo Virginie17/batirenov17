@@ -1,7 +1,5 @@
 import { AboutSection } from "./components/AboutSection";
-import { ContactFooter } from "./components/ContactFooter";
 import { ExteriorServices } from "./components/ExteriorServices";
-import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { InteriorServices } from "./components/InteriorServices";
 import { Portfolio } from "./components/Portfolio";
@@ -30,9 +28,8 @@ const jsonLd = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#faf7f1] text-[#17130f]">
+    <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <Header />
       <Hero />
       <AboutSection />
       <ValueCards />
@@ -41,7 +38,6 @@ export default function Home() {
       <ExteriorServices />
       <Portfolio />
       <ZoneIntervention />
-      <ContactFooter />
-    </main>
+    </>
   );
 }
