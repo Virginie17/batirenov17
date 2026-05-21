@@ -1,10 +1,11 @@
 import { AboutSection } from "./components/AboutSection";
 import { ContactFooter } from "./components/ContactFooter";
+import { ExteriorServices } from "./components/ExteriorServices";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
+import { InteriorServices } from "./components/InteriorServices";
 import { Portfolio } from "./components/Portfolio";
 import { ProcessZone } from "./components/ProcessZone";
-import { Services } from "./components/Services";
 import { Trust } from "./components/Trust";
 import { zones } from "./components/site-data";
 
@@ -34,7 +35,8 @@ export default function Home() {
       <Hero />
       <AboutSection />
       <Trust />
-      <Services />
+      <InteriorServices />
+      <ExteriorServices />
       <Portfolio />
       <ProcessZone />
       <ContactFooter />
