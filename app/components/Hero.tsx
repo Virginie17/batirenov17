@@ -1,56 +1,49 @@
-import { ArrowRight, Phone, Star, Wrench } from "lucide-react";
-import { stats } from "./site-data";
+import { ChevronDown, Phone, Send } from "lucide-react";
 
-const HERO_IMG = "https://media.base44.com/images/public/6a0f16530220e820fd17fa7a/3ab4dd082_generated_093efda2.png";
+const HERO_IMG = "https://media.base44.com/images/public/6a0f16530220e820fd17fa7a/c72190de5_generated_481b5044.png";
 
 export function Hero() {
   return (
-    <section id="accueil" className="relative bg-[#f5f1eb] pt-24 text-neutral-900">
-      <div className="mx-auto grid min-h-[720px] max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8">
-        <div>
-          <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-[#b8743b]">Bouhet · La Rochelle · Charente-Maritime</p>
-          <h1 className="max-w-4xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-            Menuiserie, rénovation & aménagement en Charente-Maritime
+    <section id="accueil" className="relative flex h-screen min-h-[600px] items-center justify-start overflow-hidden">
+      <div className="absolute inset-0">
+        <img src={HERO_IMG} alt="BâtiReno’V17 menuiserie" className="h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/30" />
+      </div>
+
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl">
+          <h1 className="mb-2 font-black text-white">
+            <span className="text-5xl sm:text-6xl lg:text-7xl">Bâti</span>
+            <span className="text-5xl text-[#f97316] sm:text-6xl lg:text-7xl">Reno’V</span>
+            <span className="text-5xl sm:text-6xl lg:text-7xl"> 17</span>
           </h1>
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-neutral-600">
-            BâtiReno’V17 accompagne les particuliers dans leurs travaux de portes, fenêtres, volets, salle de bain, pergola, terrasse, portail et clôture avec exigence et savoir-faire artisanal.
-          </p>
 
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <a href="/contact" className="inline-flex items-center justify-center bg-[#b8743b] px-8 py-4 text-sm font-semibold tracking-wide text-white transition hover:bg-[#9a5c2a]">
-              Demander un devis <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
-            <a href="tel:+33668008694" className="inline-flex items-center justify-center border border-neutral-900 px-8 py-4 text-sm font-semibold tracking-wide text-neutral-900 transition hover:bg-neutral-900 hover:text-white">
-              <Phone className="mr-2 h-5 w-5" /> Appeler maintenant
-            </a>
-          </div>
+          <div className="mb-6 h-1 w-24 bg-[#f97316]" />
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-2">
-            {stats.map(([number, label]) => (
-              <article key={label} className="border border-neutral-200 bg-white p-5 shadow-sm">
-                <p className="text-3xl font-bold text-[#b8743b]">{number}</p>
-                <p className="mt-1 text-sm font-semibold text-neutral-600">{label}</p>
-              </article>
-            ))}
+          <h2 className="mb-8 text-xl font-medium leading-snug text-white/90 sm:text-2xl lg:text-3xl">
+            Votre expert en menuiserie sur mesure proche de La Rochelle
+          </h2>
+
+          <div className="flex flex-wrap gap-4">
+            <a href="tel:0668008694" className="inline-flex items-center gap-2 border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold tracking-wide text-white backdrop-blur-sm transition hover:bg-white/20">
+              <Phone className="h-4 w-4" />
+              06 68 00 86 94
+            </a>
+            <a href="/contact" className="inline-flex items-center gap-2 bg-[#f97316] px-6 py-3 text-sm font-semibold tracking-wide text-white transition hover:bg-[#ea580c]">
+              <Send className="h-4 w-4" />
+              Contactez-nous !
+            </a>
           </div>
         </div>
+      </div>
 
-        <div className="relative">
-          <div className="absolute -left-4 -top-4 h-full w-full border-2 border-[#b8743b]" />
-          <img src={HERO_IMG} alt="Maison rénovée BâtiReno’V17" className="relative z-10 h-[520px] w-full object-cover shadow-xl" />
-          <div className="absolute bottom-6 left-6 z-20 bg-white p-5 shadow-xl">
-            <p className="text-sm font-semibold uppercase tracking-widest text-[#b8743b]">Artisan local</p>
-            <p className="mt-1 font-bold text-neutral-900">Travaux soignés et durables</p>
-          </div>
-          <div className="absolute right-6 top-6 z-20 bg-[#b8743b] p-4 text-white shadow-xl">
-            <Star className="mb-2 h-5 w-5" />
-            <p className="text-sm font-bold">Certifié RGE</p>
-          </div>
-          <div className="absolute bottom-6 right-6 z-20 hidden bg-neutral-900 p-4 text-white shadow-xl sm:block">
-            <Wrench className="mb-2 h-5 w-5" />
-            <p className="text-sm font-bold">Devis gratuit</p>
-          </div>
-        </div>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-white/60">
+        <ChevronDown className="h-8 w-8" />
+      </div>
+
+      <div className="absolute bottom-6 left-6 flex gap-2">
+        <div className="flex h-10 w-10 items-center justify-center rounded-md border border-white/20 bg-white/10 text-[10px] font-bold text-[#f97316] backdrop-blur-sm">RGE</div>
+        <div className="flex h-10 w-10 items-center justify-center rounded-md border border-white/20 bg-white/10 text-[10px] font-bold text-[#f97316] backdrop-blur-sm">10A</div>
       </div>
     </section>
   );
