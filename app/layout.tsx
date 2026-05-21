@@ -4,11 +4,24 @@ import { Header } from "./components/Header";
 import { StickyMobileCTA } from "./components/StickyMobileCTA";
 import "./globals.css";
 
+const siteUrl = "https://batirenov17.fr";
+
 export const metadata: Metadata = {
-  title: "BâtiReno’V17 | Menuiserie, rénovation et aménagement près de La Rochelle",
-  description: "BâtiReno’V17 réalise vos travaux de menuiserie, rénovation intérieure et extérieure, portes, fenêtres, volets, pergolas, terrasses, salle de bain, portail, clôture, toiture et façade en Charente-Maritime.",
-  alternates: {
-    canonical: "https://batirenov17.fr",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "BâtiReno’V17 | Menuiserie et rénovation près de La Rochelle",
+    template: "%s | BâtiReno’V17",
+  },
+  description: "Menuiserie et rénovation autour de Bouhet, Surgères, La Rochelle et en Charente-Maritime : portes, fenêtres, volets, salle de bain, pergola, portail, clôture, toiture et façade.",
+  alternates: { canonical: siteUrl },
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: siteUrl,
+    siteName: "BâtiReno’V17",
+    title: "BâtiReno’V17 | Menuiserie et rénovation près de La Rochelle",
+    description: "Artisan menuisier RGE pour vos travaux de menuiserie et rénovation en Charente-Maritime.",
   },
 };
 
