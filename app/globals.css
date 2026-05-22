@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary: #b8743b;
-  --primary-dark: #9a5c2a;
+  --background: #f7f3ec;
+  --foreground: #1d1a16;
+  --primary: #b86b3c;
+  --primary-dark: #9f5930;
+  --green: #2f4a3d;
 }
 
 @theme inline {
@@ -19,7 +20,55 @@ html {
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at top right, rgba(184, 107, 60, 0.08), transparent 32rem),
+    radial-gradient(circle at bottom left, rgba(47, 74, 61, 0.08), transparent 34rem),
+    var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.28;
+  background-image:
+    linear-gradient(rgba(29, 26, 22, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 26, 22, 0.02) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mix-blend-mode: multiply;
+}
+
+::selection {
+  background: rgba(184, 107, 60, 0.22);
+}
+
+.premium-card {
+  transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
+}
+
+.premium-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 70px rgba(29, 26, 22, 0.12);
+}
+
+.signature-scroll {
+  animation: signature-scroll 28s linear infinite;
+}
+
+@keyframes signature-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .signature-scroll { animation: none; }
+  .premium-card,
+  .premium-card:hover {
+    transition: none;
+    transform: none;
+  }
 }
