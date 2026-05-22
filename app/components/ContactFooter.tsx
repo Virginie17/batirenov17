@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone, Star } from "lucide-react";
 
 const services = [
   ["Portes & Fenêtres", "/portes-fenetres"],
@@ -31,15 +31,28 @@ export function ContactFooter() {
     <footer className="bg-[#2f4a3d] text-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="mb-12 rounded-[2.5rem] bg-[#fffdf8] p-8 text-[#1d1a16] shadow-xl sm:p-10 lg:flex lg:items-center lg:justify-between">
-          <div><p className="mb-2 text-sm font-black uppercase tracking-[0.25em] text-[#b86b3c]">Devis gratuit</p><h2 className="max-w-2xl text-3xl font-black sm:text-4xl">Parlons de votre projet de rénovation</h2></div>
-          <Link href="/contact" className="mt-6 inline-flex rounded-full bg-[#b86b3c] px-7 py-3.5 text-sm font-black uppercase tracking-wide text-white transition hover:bg-[#9f5930] lg:mt-0">Demander un devis</Link>
+          <div>
+            <p className="mb-2 text-sm font-black uppercase tracking-[0.25em] text-[#b86b3c]">Devis gratuit</p>
+            <h2 className="max-w-2xl text-3xl font-black sm:text-4xl">Parlons de votre projet de rénovation</h2>
+            <p className="mt-3 max-w-2xl text-sm font-semibold text-[#6f6a63]">Expliquez votre besoin, envoyez une photo si vous en avez une, et recevez un premier retour clair.</p>
+          </div>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:mt-0">
+            <a href="tel:0668008694" className="inline-flex rounded-full border border-[#1d1a16]/15 px-7 py-3.5 text-sm font-black uppercase tracking-wide text-[#1d1a16] transition hover:border-[#b86b3c] hover:text-[#b86b3c]">Appeler</a>
+            <Link href="/contact" className="inline-flex rounded-full bg-[#b86b3c] px-7 py-3.5 text-sm font-black uppercase tracking-wide text-white transition hover:bg-[#9f5930]">Demander un devis</Link>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div>
             <h3 className="mb-4 text-2xl font-black">Bâti<span className="text-[#f4c8a8]">Reno’V</span> 17</h3>
             <p className="text-sm leading-7 text-white/65">Votre expert en menuiserie sur mesure proche de La Rochelle. Plus de 20 ans de savoir-faire artisanal.</p>
-            <p className="mt-3 text-xs font-bold text-white/50">SIRET : 000 000 000 00000</p>
+            <div className="mt-4 rounded-2xl bg-white/10 p-4">
+              <div className="mb-2 flex gap-1 text-[#f4c8a8]">
+                {[1, 2, 3, 4, 5].map((star) => <Star key={star} className="h-4 w-4 fill-current" />)}
+              </div>
+              <p className="text-sm font-black">Entreprise locale RGE</p>
+              <p className="text-xs text-white/60">Avis Google à connecter dès que la fiche est finalisée.</p>
+            </div>
             <div className="mt-5 flex gap-3">
               <a href="#" aria-label="Facebook BâtiReno’V17" className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-[#f4c8a8] transition hover:bg-white/15 hover:text-white"><FacebookIcon /></a>
               <a href="#" aria-label="Instagram BâtiReno’V17" className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-[#f4c8a8] transition hover:bg-white/15 hover:text-white"><InstagramIcon /></a>
@@ -53,6 +66,7 @@ export function ContactFooter() {
             <ul className="space-y-3 text-sm text-white/65">
               <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#f4c8a8]" />1 Chemin de la Loubrie, 17540 Bouhet</li>
               <li className="flex items-center gap-2"><Phone className="h-4 w-4 shrink-0 text-[#f4c8a8]" /><a href="tel:0668008694" className="transition-colors hover:text-white">06 68 00 86 94</a></li>
+              <li className="flex items-center gap-2"><MessageCircle className="h-4 w-4 shrink-0 text-[#f4c8a8]" /><a href="https://wa.me/33668008694?text=Bonjour%2C%20je%20souhaite%20%C3%A9changer%20sur%20un%20projet%20de%20r%C3%A9novation." target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">Écrire sur WhatsApp</a></li>
               <li className="flex items-center gap-2"><Mail className="h-4 w-4 shrink-0 text-[#f4c8a8]" /><a href="mailto:c.vicq@outlook.fr" className="transition-colors hover:text-white">c.vicq@outlook.fr</a></li>
             </ul>
           </div>
@@ -63,7 +77,7 @@ export function ContactFooter() {
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-8 text-center text-xs leading-6 text-white/45">
-          <p>© {year} BâtiReno’V 17 — Tous droits réservés — SIRET : 000 000 000 00000</p>
+          <p>© {year} BâtiReno’V 17 — Tous droits réservés</p>
           <p>Site réalisé par <a href="https://virginieassistance.fr" target="_blank" rel="noopener noreferrer" className="font-bold text-[#f4c8a8] transition hover:text-white">Virginie Assistance</a></p>
         </div>
       </div>
