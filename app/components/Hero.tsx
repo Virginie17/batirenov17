@@ -1,6 +1,8 @@
-import { ArrowRight, BadgeCheck, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { ArrowRight, BadgeCheck, Home, MapPin, Phone, ShieldCheck, Sparkles } from "lucide-react";
 
-const HERO_IMG = "https://media.base44.com/images/public/6a0f16530220e820fd17fa7a/c72190de5_generated_481b5044.png";
+const HERO_MAIN = "https://media.base44.com/images/public/6a0f16530220e820fd17fa7a/3ab4dd082_generated_093efda2.png";
+const HERO_INTERIOR = "https://media.base44.com/images/public/6a0f16530220e820fd17fa7a/e100cc4ec_generated_be17f913.png";
+const HERO_EXTERIOR = "https://media.base44.com/images/public/6a0f16530220e820fd17fa7a/c461a20a7_generated_b8cfce79.png";
 
 const proofs = ["Certifié RGE", "Garantie décennale", "Intervention 60 km autour de Bouhet"];
 
@@ -45,18 +47,46 @@ export function Hero() {
         </div>
 
         <div className="relative">
-          <div className="absolute -right-5 -top-5 h-40 w-40 rounded-[2rem] bg-[#2f4a3d]" />
-          <div className="absolute -bottom-5 -left-5 h-40 w-40 rounded-[2rem] bg-[#b86b3c]" />
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-[#fffdf8] p-4 shadow-2xl ring-1 ring-stone-200">
-            <img src={HERO_IMG} alt="Maison rénovée par BâtiReno’V17 près de La Rochelle" className="h-[430px] w-full rounded-[2rem] object-cover sm:h-[560px]" />
-            <div className="absolute left-8 top-8 rounded-2xl bg-[#fffdf8]/95 p-5 shadow-xl backdrop-blur">
-              <p className="text-3xl font-black text-[#1d1a16]">20+</p>
-              <p className="text-sm font-bold text-[#6f6a63]">ans de savoir-faire</p>
+          <div className="absolute -right-6 -top-6 h-44 w-44 rounded-[2rem] bg-[#2f4a3d]" />
+          <div className="absolute -bottom-6 -left-6 h-44 w-44 rounded-[2rem] bg-[#b86b3c]" />
+
+          <div className="relative rounded-[2.5rem] bg-[#fffdf8] p-4 shadow-2xl ring-1 ring-stone-200">
+            <div className="grid h-[560px] gap-4 overflow-hidden rounded-[2rem] sm:grid-cols-[1.25fr_0.75fr]">
+              <div className="relative min-h-[340px] overflow-hidden rounded-[1.7rem] sm:min-h-full">
+                <img src={HERO_MAIN} alt="Maison rénovée et valorisée par BâtiReno’V17" className="h-full w-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+                <div className="absolute bottom-5 left-5 rounded-2xl bg-[#fffdf8]/95 p-5 shadow-xl backdrop-blur">
+                  <p className="text-3xl font-black text-[#1d1a16]">20+</p>
+                  <p className="text-sm font-bold text-[#6f6a63]">ans de savoir-faire</p>
+                </div>
+              </div>
+
+              <div className="grid gap-4">
+                <div className="relative overflow-hidden rounded-[1.7rem]">
+                  <img src={HERO_INTERIOR} alt="Rénovation intérieure et salle de bain" className="h-full min-h-[170px] w-full object-cover" />
+                  <div className="absolute bottom-4 left-4 rounded-full bg-[#fffdf8]/95 px-4 py-2 text-xs font-black uppercase tracking-wide text-[#2f4a3d] shadow-lg backdrop-blur">Intérieur</div>
+                </div>
+                <div className="relative overflow-hidden rounded-[1.7rem]">
+                  <img src={HERO_EXTERIOR} alt="Aménagement extérieur pergola terrasse" className="h-full min-h-[170px] w-full object-cover" />
+                  <div className="absolute bottom-4 left-4 rounded-full bg-[#fffdf8]/95 px-4 py-2 text-xs font-black uppercase tracking-wide text-[#2f4a3d] shadow-lg backdrop-blur">Extérieur</div>
+                </div>
+              </div>
             </div>
-            <div className="absolute bottom-8 right-8 rounded-2xl bg-[#2f4a3d] p-5 text-white shadow-xl">
+
+            <div className="absolute -bottom-7 left-8 hidden rounded-2xl bg-[#2f4a3d] p-5 text-white shadow-xl sm:block">
               <ShieldCheck className="mb-2 h-6 w-6 text-[#f4c8a8]" />
               <p className="text-sm font-black uppercase tracking-wide">Travaux assurés</p>
               <p className="text-sm text-white/70">RGE · décennale</p>
+            </div>
+
+            <div className="absolute -right-5 top-10 hidden rounded-2xl bg-[#fffdf8] p-4 shadow-xl ring-1 ring-stone-200 sm:block">
+              <Sparkles className="mb-2 h-6 w-6 text-[#b86b3c]" />
+              <p className="text-sm font-black text-[#1d1a16]">Habitat valorisé</p>
+            </div>
+
+            <div className="absolute right-8 bottom-8 hidden rounded-2xl bg-[#b86b3c] p-4 text-white shadow-xl md:block">
+              <Home className="mb-2 h-6 w-6" />
+              <p className="text-sm font-black uppercase tracking-wide">Devis gratuit</p>
             </div>
           </div>
         </div>
