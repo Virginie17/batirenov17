@@ -6,6 +6,7 @@ import { LocalBusinessSchema } from "./components/LocalBusinessSchema";
 import { Portfolio } from "./components/Portfolio";
 import { ProjectSteps } from "./components/ProjectSteps";
 import { ServicesShowcase } from "./components/ServicesShowcase";
+import { SignatureStrip } from "./components/SignatureStrip";
 import { SocialProof } from "./components/SocialProof";
 import { ValueCards } from "./components/ValueCards";
 import { ZoneIntervention } from "./components/ZoneIntervention";
@@ -15,6 +16,7 @@ export default function Home() {
     <>
       <LocalBusinessSchema />
       <Hero />
+      <SignatureStrip />
       <ProjectSteps />
       <AboutSection />
       <ValueCards />
