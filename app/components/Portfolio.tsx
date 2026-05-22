@@ -25,12 +25,12 @@ function BeforeAfterCard({ avant, apres }: { avant: string; apres: string }) {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="group relative cursor-pointer overflow-hidden" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
-      <img src={hovered ? apres : avant} alt={hovered ? "Après rénovation" : "Avant rénovation"} className="h-64 w-full object-cover transition-all duration-500 sm:h-72" />
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-        <span className={`text-sm font-black uppercase tracking-widest ${hovered ? "text-[#f97316]" : "text-white/80"}`}>
-          {hovered ? "Après" : "Avant"}
-        </span>
+    <div className="group relative cursor-pointer overflow-hidden rounded-[2rem] bg-[#fffdf8] p-3 shadow-sm ring-1 ring-stone-200" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+      <div className="relative overflow-hidden rounded-[1.5rem]">
+        <img src={hovered ? apres : avant} alt={hovered ? "Après rénovation" : "Avant rénovation"} className="h-72 w-full object-cover transition-all duration-500 group-hover:scale-105" />
+        <div className="absolute bottom-4 left-4 rounded-full bg-[#fffdf8]/95 px-4 py-2 shadow-lg backdrop-blur">
+          <span className={`text-xs font-black uppercase tracking-widest ${hovered ? "text-[#b86b3c]" : "text-[#2f4a3d]"}`}>{hovered ? "Après" : "Avant"}</span>
+        </div>
       </div>
     </div>
   );
@@ -38,30 +38,25 @@ function BeforeAfterCard({ avant, apres }: { avant: string; apres: string }) {
 
 export function Portfolio() {
   return (
-    <section id="realisations" className="bg-white py-20 lg:py-28">
+    <section id="realisations" className="bg-[#f7f3ec] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-14 text-center">
-          <h2 className="text-3xl font-black text-neutral-900 sm:text-4xl">
-            Nos réalisations de travaux de menuiserie <span className="text-[#f97316]">avant / après</span>
-          </h2>
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#b86b3c]">Réalisations</p>
+          <h2 className="text-3xl font-black text-[#1d1a16] sm:text-5xl">Des transformations visibles, propres et rassurantes</h2>
+          <p className="mt-5 leading-8 text-[#6f6a63]">Survolez les images pour découvrir le résultat après intervention.</p>
         </div>
 
-        <div className="mb-16 grid grid-cols-1 gap-6 md:grid-cols-2">
-          {comparisons.map((comparison) => (
-            <div key={comparison.avant}>
-              <BeforeAfterCard {...comparison} />
-              <p className="mt-2 text-center text-xs text-neutral-400">Survolez pour voir le résultat</p>
-            </div>
-          ))}
+        <div className="mb-14 grid grid-cols-1 gap-6 md:grid-cols-2">
+          {comparisons.map((comparison) => <BeforeAfterCard key={comparison.avant} {...comparison} />)}
         </div>
 
-        <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
           {stats.map((stat) => {
             const Icon = stat.icon;
             return (
-              <article key={stat.label} className="bg-neutral-950 p-6 text-center text-white">
-                <Icon className="mx-auto mb-3 h-8 w-8 text-[#f97316]" />
-                <p className="text-sm font-bold">{stat.label}</p>
+              <article key={stat.label} className="rounded-[1.5rem] bg-[#fffdf8] p-6 text-center shadow-sm ring-1 ring-stone-200">
+                <Icon className="mx-auto mb-3 h-8 w-8 text-[#b86b3c]" />
+                <p className="text-sm font-black text-[#1d1a16]">{stat.label}</p>
               </article>
             );
           })}
