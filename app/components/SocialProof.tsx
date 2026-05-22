@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { Award, BadgeCheck, ShieldCheck, Star, ThumbsUp } from "lucide-react";
+import { Award, BadgeCheck, MapPin, ShieldCheck, Star, ThumbsUp } from "lucide-react";
 
 const reviews = [
-  { name: "Client particulier", city: "Secteur La Rochelle", text: "Travail sérieux, échanges clairs et chantier propre. Une entreprise locale rassurante pour des travaux de rénovation." },
-  { name: "Client particulier", city: "Secteur Surgères", text: "Bon accompagnement du début à la fin, avec des conseils utiles pour choisir la solution la plus adaptée." },
-  { name: "Client particulier", city: "Charente-Maritime", text: "Intervention soignée, résultat propre et conforme aux attentes. Le contact direct avec l’artisan est un vrai plus." },
+  { name: "Projet menuiserie", city: "Secteur La Rochelle", text: "Changement de menuiseries avec conseils sur le choix des matériaux, suivi clair et chantier rendu propre." },
+  { name: "Projet rénovation", city: "Secteur Surgères", text: "Accompagnement sérieux du premier échange jusqu’à la fin des travaux, avec des explications simples et rassurantes." },
+  { name: "Projet extérieur", city: "Charente-Maritime", text: "Travail soigné sur l’aménagement extérieur. Le contact direct avec l’artisan facilite vraiment les décisions." },
 ];
 
 const proofs = [
@@ -19,7 +19,7 @@ export function SocialProof() {
     <section className="bg-[#fffdf8] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto mb-14 max-w-3xl text-center">
-          <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#b86b3c]">Ils nous font confiance</p>
+          <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#b86b3c]">Confiance locale</p>
           <h2 className="text-3xl font-black text-[#1d1a16] sm:text-5xl">Des garanties concrètes pour avancer sereinement</h2>
           <p className="mt-5 leading-8 text-[#6f6a63]">Expérience, garanties, proximité et qualité de suivi sont au cœur de l’accompagnement BâtiReno’V17.</p>
         </div>
@@ -36,6 +36,17 @@ export function SocialProof() {
               </article>
             );
           })}
+        </div>
+
+        <div className="mb-6 rounded-[2.5rem] bg-[#f7f3ec] p-6 shadow-sm ring-1 ring-stone-200 sm:p-8 lg:flex lg:items-center lg:justify-between">
+          <div>
+            <p className="mb-2 inline-flex items-center gap-2 text-sm font-black uppercase tracking-[0.2em] text-[#b86b3c]"><MapPin className="h-4 w-4" /> Avis & présence locale</p>
+            <h3 className="text-2xl font-black text-[#1d1a16]">Un artisan basé à Bouhet, proche de La Rochelle</h3>
+            <p className="mt-3 max-w-3xl leading-8 text-[#6f6a63]">Pour maximiser la confiance, connectez ici la fiche Google Business dès qu’elle est validée : note moyenne, avis clients réels et lien itinéraire Google Maps.</p>
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=1%20Chemin%20de%20la%20Loubrie%2017540%20Bouhet" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex rounded-full bg-[#2f4a3d] px-7 py-3.5 text-sm font-black uppercase tracking-wide text-white transition hover:bg-[#243a30] lg:mt-0">
+            Voir l’itinéraire
+          </a>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
