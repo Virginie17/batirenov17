@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
+import { Manrope } from "next/font/google";
 import { ContactFooter } from "./components/ContactFooter";
 import { Header } from "./components/Header";
 import { StickyMobileCTA } from "./components/StickyMobileCTA";
 import "./globals.css";
 
 const siteUrl = "https://batirenov17.fr";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -28,7 +35,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <body>
+      <body className={manrope.className}>
         <div className="flex min-h-screen flex-col pb-20 md:pb-0">
           <Header />
           <main className="flex-1">{children}</main>
