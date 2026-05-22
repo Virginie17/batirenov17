@@ -10,6 +10,28 @@ const services = [
   ["Charpente & Toiture", "/charpente-toiture"],
 ];
 
+const legalLinks = [
+  ["Mentions légales", "/mentions-legales"],
+  ["Politique de confidentialité", "/politique-confidentialite"],
+  ["Gestion des cookies", "/cookies"],
+];
+
+function FacebookIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-current">
+      <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.23.2 2.23.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.77l-.44 2.91h-2.33V22C18.34 21.24 22 17.08 22 12.06Z" />
+    </svg>
+  );
+}
+
+function InstagramIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-current">
+      <path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-2.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z" />
+    </svg>
+  );
+}
+
 export function ContactFooter() {
   const year = new Date().getFullYear();
 
@@ -24,10 +46,14 @@ export function ContactFooter() {
           <Link href="/contact" className="mt-6 inline-flex rounded-full bg-[#b86b3c] px-7 py-3.5 text-sm font-black uppercase tracking-wide text-white transition hover:bg-[#9f5930] lg:mt-0">Demander un devis</Link>
         </div>
 
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div>
             <h3 className="mb-4 text-2xl font-black">Bâti<span className="text-[#f4c8a8]">Reno’V</span> 17</h3>
             <p className="text-sm leading-7 text-white/65">Votre expert en menuiserie sur mesure proche de La Rochelle. Plus de 20 ans de savoir-faire artisanal.</p>
+            <div className="mt-5 flex gap-3">
+              <a href="#" aria-label="Facebook BâtiReno’V17" className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-[#f4c8a8] transition hover:bg-white/15 hover:text-white"><FacebookIcon /></a>
+              <a href="#" aria-label="Instagram BâtiReno’V17" className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-[#f4c8a8] transition hover:bg-white/15 hover:text-white"><InstagramIcon /></a>
+            </div>
           </div>
 
           <div>
@@ -54,9 +80,19 @@ export function ContactFooter() {
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-xs font-black text-[#f4c8a8]">10 ans</div>
             </div>
           </div>
+
+          <div>
+            <h4 className="mb-4 text-sm font-black uppercase tracking-widest text-[#f4c8a8]">Informations légales</h4>
+            <ul className="space-y-2 text-sm text-white/65">
+              {legalLinks.map(([label, href]) => <li key={href}><Link href={href} className="transition-colors hover:text-white">{label}</Link></li>)}
+            </ul>
+          </div>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-8 text-center text-xs text-white/45">© {year} BâtiReno’V 17 — Tous droits réservés</div>
+        <div className="mt-12 border-t border-white/10 pt-8 text-center text-xs leading-6 text-white/45">
+          <p>© {year} BâtiReno’V 17 — Tous droits réservés</p>
+          <p>Site réalisé par <a href="https://virginieassistance.fr" target="_blank" rel="noopener noreferrer" className="font-bold text-[#f4c8a8] transition hover:text-white">Virginie Assistance</a></p>
+        </div>
       </div>
     </footer>
   );
