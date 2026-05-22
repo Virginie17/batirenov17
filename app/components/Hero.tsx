@@ -1,10 +1,10 @@
-import { ArrowRight, BadgeCheck, Home, MapPin, Phone, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, BadgeCheck, Home, MapPin, MessageCircle, Phone, ShieldCheck, Sparkles } from "lucide-react";
 
 const HERO_MAIN = "https://media.base44.com/images/public/6a0f16530220e820fd17fa7a/3ab4dd082_generated_093efda2.png";
 const HERO_INTERIOR = "https://media.base44.com/images/public/6a0f16530220e820fd17fa7a/e100cc4ec_generated_be17f913.png";
 const HERO_EXTERIOR = "https://media.base44.com/images/public/6a0f16530220e820fd17fa7a/c461a20a7_generated_b8cfce79.png";
 
-const proofs = ["Certifié RGE", "Garantie décennale", "Intervention 60 km autour de Bouhet"];
+const proofs = ["Artisan local", "Certifié RGE", "Garantie décennale", "Devis gratuit sous 48h"];
 
 export function Hero() {
   return (
@@ -24,17 +24,39 @@ export function Hero() {
           </h1>
 
           <p className="mt-7 max-w-2xl text-lg leading-8 text-[#6f6a63] sm:text-xl">
-            Portes, fenêtres, volets, salle de bain, pergola, terrasse, portail et toiture : BâtiReno’V17 accompagne vos travaux avec plus de 20 ans de savoir-faire artisanal.
+            Un artisan de proximité pour transformer, isoler et valoriser votre maison : portes, fenêtres, volets, salle de bain, pergola, terrasse, portail, clôture, toiture et façade.
           </p>
+
+          <div className="mt-7 grid max-w-2xl gap-3 rounded-[2rem] bg-[#fffdf8] p-4 shadow-sm ring-1 ring-stone-200 sm:grid-cols-3">
+            <div className="rounded-2xl bg-[#f7f3ec] p-4">
+              <p className="text-2xl font-black text-[#1d1a16]">20+</p>
+              <p className="text-xs font-bold uppercase tracking-wide text-[#6f6a63]">ans de savoir-faire</p>
+            </div>
+            <div className="rounded-2xl bg-[#f7f3ec] p-4">
+              <p className="text-2xl font-black text-[#1d1a16]">60 km</p>
+              <p className="text-xs font-bold uppercase tracking-wide text-[#6f6a63]">autour de Bouhet</p>
+            </div>
+            <div className="rounded-2xl bg-[#f7f3ec] p-4">
+              <p className="text-2xl font-black text-[#1d1a16]">RGE</p>
+              <p className="text-xs font-bold uppercase tracking-wide text-[#6f6a63]">décennale incluse</p>
+            </div>
+          </div>
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <a href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#b86b3c] px-8 py-4 text-sm font-black uppercase tracking-wide text-white shadow-lg shadow-[#b86b3c]/20 transition hover:-translate-y-0.5 hover:bg-[#9f5930]">
-              Demander un devis gratuit <ArrowRight className="ml-2 h-5 w-5" />
+              Obtenir mon estimation gratuite <ArrowRight className="ml-2 h-5 w-5" />
             </a>
             <a href="tel:0668008694" className="inline-flex items-center justify-center rounded-full border border-[#1d1a16]/15 bg-[#fffdf8] px-8 py-4 text-sm font-black uppercase tracking-wide text-[#1d1a16] transition hover:border-[#b86b3c] hover:text-[#b86b3c]">
               <Phone className="mr-2 h-5 w-5" /> 06 68 00 86 94
             </a>
+            <a href="https://wa.me/33668008694?text=Bonjour%2C%20je%20souhaite%20%C3%A9changer%20sur%20un%20projet%20de%20r%C3%A9novation." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full border border-[#2f4a3d]/20 bg-[#2f4a3d] px-8 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:-translate-y-0.5 hover:bg-[#243a30]">
+              <MessageCircle className="mr-2 h-5 w-5" /> WhatsApp
+            </a>
           </div>
+
+          <p className="mt-4 text-sm font-bold text-[#6f6a63]">
+            Réponse rapide · Conseil clair · Devis gratuit sans engagement
+          </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             {proofs.map((proof) => (
