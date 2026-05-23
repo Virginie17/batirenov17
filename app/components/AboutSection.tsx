@@ -8,21 +8,14 @@ export function AboutSection() {
           <div>
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#b8743b]">BâtiReno’V17</p>
             <h2 className="mb-5 text-3xl font-bold leading-tight text-neutral-900 sm:text-4xl">
-              Un artisan local pour des travaux soignés, durables et bien conseillés
+              Un accompagnement clair, du premier échange à la fin du chantier
             </h2>
             <p className="mb-5 leading-8 text-neutral-600">
-              Basée à Bouhet, près de Surgères et La Rochelle, BâtiReno’V17 accompagne les particuliers pour leurs travaux de menuiserie, rénovation intérieure et aménagement extérieur.
+              Basée à Bouhet, BâtiReno’V17 accompagne les particuliers autour de Surgères et La Rochelle pour leurs travaux de menuiserie, rénovation intérieure et aménagement extérieur.
             </p>
-            <p className="mb-8 leading-8 text-neutral-600">
-              L’objectif : vous proposer une solution claire, adaptée à votre maison, avec des finitions propres et un interlocuteur de proximité.
+            <p className="leading-8 text-neutral-600">
+              Ici, pas de discours compliqué : vous expliquez votre besoin, l’artisan vous conseille, puis vous avancez avec une solution adaptée à votre maison.
             </p>
-            <div className="flex flex-wrap gap-3">
-              {["20+ ans d’expérience", "RGE", "Garantie décennale"].map((item) => (
-                <span key={item} className="rounded-full bg-[#f7f3ec] px-4 py-2 text-sm font-bold text-[#2f4a3d] ring-1 ring-stone-200">
-                  {item}
-                </span>
-              ))}
-            </div>
           </div>
           <div className="relative">
             <div className="absolute -left-4 -top-4 h-full w-full rounded-[2rem] border-2 border-[#b8743b]" />
