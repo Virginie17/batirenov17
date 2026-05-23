@@ -16,7 +16,8 @@ export function LocalBusinessSchema() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      address: "1 Chemin de la Loubrie, 17540 Bouhet, France",
+      latitude: 46.1474,
+      longitude: -0.8786,
     },
     areaServed: [
       "Bouhet",
